@@ -1,47 +1,37 @@
-console.log("JS LOADED");
-
 function hideAll() {
-  document.querySelectorAll(".screen").forEach(s => {
-    s.classList.add("hidden");
-  });
+  document.querySelectorAll(".screen").forEach(s =>
+    s.classList.remove("active")
+  );
 }
 
-function goGift() {
-  console.log("YES clicked");
+function show(id) {
   hideAll();
-  document.getElementById("gift").classList.remove("hidden");
+  document.getElementById(id).classList.add("active");
 }
 
-function goNo() {
-  console.log("NO clicked");
-  hideAll();
-  document.getElementById("no").classList.remove("hidden");
-}
+/* Ready */
+document.getElementById("yesBtn").onclick = () => show("gift");
+document.getElementById("noBtn").onclick = () => show("no");
 
-function goFinal() {
-  console.log("Proceed clicked");
-  hideAll();
-  document.getElementById("final").classList.remove("hidden");
-}
-
+/* Gift click */
 const giftGif = document.getElementById("giftGif");
-giftGif.addEventListener("click", () => {
-  console.log("Gift clicked");
-
-  // restart gif safely
+giftGif.onclick = () => {
   const src = giftGif.src;
   giftGif.src = "";
   giftGif.src = src;
 
   setTimeout(() => {
-    hideAll();
-    document.getElementById("afterGift").classList.remove("hidden");
-  }, 1200);
-});
+    show("afterGift");
+  }, 1400);
+};
 
+/* Exit button dodges */
 const exitBtn = document.getElementById("exitBtn");
-exitBtn.addEventListener("mouseover", () => {
+exitBtn.onmouseover = () => {
   exitBtn.style.position = "absolute";
   exitBtn.style.left = Math.random() * 70 + "vw";
   exitBtn.style.top = Math.random() * 70 + "vh";
-});
+};
+
+/* Proceed */
+document.getElementById("proceedBtn").onclick = () => show("final");
