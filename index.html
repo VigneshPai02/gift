@@ -3,51 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Valentine 💖</title>
+  <title>For You 💖</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- READY -->
-<section id="ready" class="screen show">
-  <h1>Are you ready?</h1>
+<section id="ready" class="screen active">
+  <h1 class="title">Are you ready, my love?</h1>
   <div class="buttons">
-    <button id="yesBtn">Yes</button>
-    <button id="noBtn">No</button>
+    <button id="yesBtn" class="primary">Yes</button>
+    <button id="noBtn" class="secondary">No</button>
   </div>
 </section>
 
-<!-- NO -->
 <section id="no" class="screen">
   <div class="no-bg"></div>
-  <button id="tryAgainBtn" class="try-again">Try Again</button>
+  <button id="tryAgainBtn" class="secondary overlay-btn">Try Again</button>
 </section>
 
-<!-- GIFT -->
 <section id="gift" class="screen gift-screen">
   <img id="giftGif" src="gift.gif" alt="Gift" />
-  <p>Click on the gift to open it</p>
+  <p class="subtitle">Click on the gift to open it ✨</p>
 </section>
 
-<!-- AFTER GIFT -->
 <section id="afterGift" class="screen">
   <p class="message">
-    Your gift isn’t here, silly,<br>
+    Your gift isn’t here, silly...<br>
     but you’ll have it very soon 💕
   </p>
   <img src="cat_kiss.gif" class="cat" alt="Cat kiss" />
   <div class="buttons">
-    <button id="proceedBtn">Proceed further</button>
-    <button id="exitBtn">Exit</button>
+    <button id="proceedBtn" class="primary">Proceed further</button>
+    <button id="exitBtn" class="secondary">Exit</button>
   </div>
 </section>
 
-<!-- FINAL -->
 <section id="final" class="screen">
-  <h1>I love you, so here’s another gift 💖</h1>
-  <a href="SPOTIFY_LINK_HERE" target="_blank">
-    <img src="collage.jpg" class="collage" alt="Collage" />
-  </a>
+  <h1 class="title">I love you, so here’s something special 💖</h1>
+  <img id="riddhiGif" src="riddhi.gif" class="riddhi" alt="Riddhi GIF" />
+  <p class="subtitle">Click on the GIF 🎶</p>
 </section>
 
 <script src="script.js"></script>
